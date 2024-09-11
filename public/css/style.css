@@ -45,23 +45,42 @@ h1{
     font-size: 2rem;
 }
 
-.hero{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 99vh;
-    /* outline: 1px solid red; */
-    flex-direction: column;
-    /* gap: 50px; */
-    padding: 10% 0;
-    padding-bottom: 0%;
-    width: 100%;
+.hero {
+  position: relative;
+  /* Ensure .hero is the positioning context */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 99vh;
+  /* outline: 1px solid red; */
+  flex-direction: column;
+  /* gap: 50px; */
+  padding: 10% 0;
+  padding-bottom: 0%;
+  width: 100%;
 }
 
 .hero img{
     width: 40%;
     z-index: -9999;
     margin: auto;
+}
+
+#icon1 {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  z-index: 1;
+  left: 15%;
+  
+  /* Adjust this value as needed */
+  top: 40%;
+  /* Center vertically */
+  transform:  rotate(-30deg);
+    /* Adjust for vertical centering and rotate by 30 degrees */
+  /* Adjust for vertical centering */
+  /* outline: 1px solid red; */
+  
 }
 
 .countdown-date{
