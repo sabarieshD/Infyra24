@@ -27,7 +27,7 @@ border-radius: 20px;
 }
 
 body{
-    background: #eeeeee;
+    background: #e6f8ef;
     color: #eeeeee;
     position: relative; 
 }
@@ -50,17 +50,18 @@ h1{
     justify-content: center;
     align-items: center;
     height: 99vh;
-    /* outline: 1px solid red; */
+    scale: 1;
     flex-direction: column;
     /* gap: 50px; */
-    padding: 10% 0;
+    padding: 8% 0;
+    z-index: 1;
     padding-bottom: 0%;
     width: 100%;
 }
 
 .hero img{
-    width: 40%;
-    z-index: -9999;
+    width: 70%;
+    z-index: 9999;
     margin: auto;
 }
 
@@ -513,6 +514,7 @@ footer a:hover{
     background-color: rgba(0, 0, 0, 0.329);
     color: #eeeeee;
     cursor: pointer;
+    z-index: 1;
     outline: 1px solid #767ecf;
     border-radius: 5px;
     text-decoration: none;
@@ -604,7 +606,23 @@ footer a:hover{
         margin: 3% 0 5% 0;
     }
   }
-  @media (min-width:900px) and (max-width:1024px) {
+
+  @media (min-width:390px) and (max-width:844px) {
+    .marquee-item img{
+      width:190px;
+      height:170px;
+      margin-left: 3em;
+  }
+  .marquee-content{
+      animation: scrolling 8s linear infinite; 
+  }
+  @keyframes scrolling {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-300%); }
+  }
+  }
+
+  @media (min-width:890px) and (max-width:1023px) {
     .hero img{
         margin-left: 130px;
         height: 400vh;
@@ -631,17 +649,63 @@ footer a:hover{
         margin-left: 290px;
         flex-wrap: wrap;
     }
+    .marquee-item img{
+      width:250px;
+      height:190px;
+      margin-left: 3em;
+  }
     .marquee-content{
         gap: 8vw;
+        animation: scrolling 8s linear infinite; 
     }
 
     @keyframes scrolling {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-200%); }
+        100% { transform: translateX(-300%); }
+    }
+    .register-events{
+      width: 100%;
     }
   }
 
+  @media (min-width: 1024px) and (max-width: 1366px) {
+    .branding {
+      width: 400px;
+    }
+  
+    .about-us {
+      width: 100vw;
+    }
+  
+    #hero img {
+      width: 100vw !important;
+    }
+  
+    .event-reg-btns {
+      width: 80vw;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Ensures space between the cards */
+    }
 
+    .marquee-content {
+      gap: 8vw;
+      width: 190%;
+      animation: scrolling 8s linear infinite;
+    }
+
+    .marquee-item img{
+      width:400px;
+      height:290px;
+      margin-left: 3em;
+    }
+    
+    @keyframes scrolling {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-300%); }
+  }
+  }
+  
   .cards {
     display: flex;
     gap: 2em;
@@ -650,7 +714,7 @@ footer a:hover{
   h1 {
     font-size: 3vmin;
     text-align: center;
-    color: white;
+    color: #fff;
   }
   
   p {
@@ -675,7 +739,7 @@ footer a:hover{
     overflow: hidden;
   }
   
-  .overlay {
+  .overlays {
     position: relative;
     display: flex;
     width: 100%;
@@ -697,9 +761,9 @@ footer a:hover{
     border: 2px solid;
     border-image: linear-gradient(
         to bottom,
-        #aea724 5%,
-        forestgreen 35% 65%,
-        #aea724 95%
+        #0e2ea2 5%,
+        rgb(37, 10, 157) 35% 65%,
+        #2440ae 95%
       )
       0 0 0 100%;
     transition: 0.3s ease-in-out 0.2s;
@@ -707,18 +771,45 @@ footer a:hover{
   }
   
   /* Centering the photography icon */
-  .image-content {
+  .image-content{
     position: absolute;
-    top: 50%;  /* Vertically centers the image */
-    left: 50%; /* Horizontally centers the image */
-    width: 350px; /* Set appropriate size */
+    top: 50%;  
+    left: 50%; 
+    width: 350px;
     height: 350px;
-    background-image: url("/asserts/photography.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transform: translate(-50%, -50%); /* This will ensure it stays centered */
+    transform: translate(-50%, -50%); 
     transition: 0.3s ease-in-out;
+  }
+
+  #codinglogo{
+    background-image: url("/asserts/codinglogo.png");
+  }
+  #conact{
+    background-image: url("/asserts/conact.png");
+  }
+  #congAIze{
+    background-image: url("/asserts/congAIze.png");
+    left: 55%;
+  }
+  #innotrivia{
+    background-image: url("/asserts/innotrivia-removebg-preview.png");
+  }
+  #photography{
+    background-image: url("/asserts/photography.png");
+  }
+  #presentix{
+    background-image: url("/asserts/presentix1.png");
+    left: 55%;
+  }
+  #surfzap{
+    background-image: url("/asserts/surfzap.png");
+  }
+  #uiux1{
+    background-image: url("/asserts/uiux1.png");
+    left: 52%;
   }
   
   .dots {
@@ -747,15 +838,15 @@ footer a:hover{
     position: absolute;
     top: 0;
     right: 0;
-    width: 70%;  /* Adjusted to match the smaller layout */
+    width: 73%;  /* Adjusted to match the smaller layout */
     height: 100%;
     padding: 5%;
     background: #fff;
-    box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.4);
+    box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.2);
     overflow-y: scroll;
   }
   
-  .wrap:hover .overlay {
+  .wrap:hover .overlays {
     transform: translateX(-70%); /* Adjusted to match new size */
   }
   
@@ -774,7 +865,7 @@ footer a:hover{
   }
   
   .wrap:hover .dots .dot {
-    background: white;
+    background: #fff;
   }
   
   /* Animations and timing delays */
@@ -889,3 +980,27 @@ footer a:hover{
     justify-content: center;
     align-items: center;
 }
+
+#bg{
+  position: absolute;
+  width: 100%;
+  height: 800px;
+  z-index: 0;
+  opacity: 0.1;
+}
+/* .abt_card{
+  display
+  width: 40vw;
+  height: 50vh;
+  margin-top: 10%;
+  margin-bottom: 30%;
+  border-radius: 30px;
+  box-shadow: inset 1px 1px 15px 0 rgba(0 0 0 / 0.2);
+  background-color:rgb(104, 114, 191);
+}
+
+#abt1, #abt2, #abt3{
+  width: 25vw;
+  height: 30vh;
+  border-radius: 15px;
+} */
