@@ -1428,10 +1428,13 @@ footer a:hover{
     margin-top: 200%;
     width: 110%;
  }
+ .tline h1 {
+  margin-left: 200%;
+ }
   .tline{
     margin-top: 35%;
     width: 40px;
-    height: 1010px;
+    height: 710px;
   }
   .timeline {
     margin-right: -100px;
@@ -1443,9 +1446,9 @@ footer a:hover{
   .timeline-line {
     position: absolute;
     left: 20px;
-    top: 71.9%;
+    top: 74.9%;
     bottom: 0;
-    height: 1560px;
+    height: 1260px;
     width: 4px;
     background-color: #e8e8e8;
     z-index: 1;
@@ -1599,6 +1602,12 @@ footer a:hover{
   }
 }
 
+}
+
+@media (min-width:414px) and (max-width: 896px) {
+ .timeline-line {
+  margin-top: -5%;
+ }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
